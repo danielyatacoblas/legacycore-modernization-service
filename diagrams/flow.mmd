@@ -1,0 +1,8 @@
+flowchart LR
+    A[Request migration] --> B[Read legacy record]
+    B --> C[Map canonical model]
+    C --> D[Validate business rules]
+    D --> E[Write PostgreSQL]
+    E --> F[Publish migration event]
+    F --> G[Reconcile result]
+    D -. invalid .-> X[Quarantine record]
