@@ -1,0 +1,9 @@
+flowchart LR
+    U[React Migration Console] --> API[Java 17 Spring Boot]
+    API --> M[Migration Orchestrator]
+    M --> SOAP[Legacy SOAP Adapter]
+    M --> REST[Modern REST Adapter]
+    SOAP --> ORA[(Oracle)]
+    REST --> PG[(PostgreSQL)]
+    M --> K[(Kafka)]
+    API --> AZ[Azure Ready Deployment]

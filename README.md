@@ -1,5 +1,33 @@
 # LegacyCore Modernization Service
 
+## Objetivo del proyecto
+
+Demostrar una modernización empresarial Oracle → PostgreSQL sin migraciones
+irrepetibles: lectura incremental, checkpoints transaccionales, reanudación,
+reconciliación y operación Linux. La consola React permite observar avance,
+lag y consistencia del proceso.
+
+## Evidencia visual
+
+![Centro de migración LegacyCore](docs/screenshots/dashboard-desktop.png)
+
+| Arquitectura | Flujo funcional | GitFlow |
+|---|---|---|
+| ![Arquitectura](diagrams/rendered/architecture.svg) | ![Flujo](diagrams/rendered/flow.svg) | ![GitFlow](diagrams/rendered/gitflow.svg) |
+
+Disponible también la [vista móvil](docs/screenshots/dashboard-mobile.png).
+
+## Consola web
+
+```bash
+cd frontend
+npm ci
+npm run dev
+```
+
+La UI abre en `http://localhost:5177` y enruta la API hacia
+`http://localhost:8095`.
+
 Servicio Java 21 + Spring Boot para una modernización incremental Oracle → PostgreSQL con reanudación segura, trazabilidad y reconciliación verificable.
 
 ## Capacidades
