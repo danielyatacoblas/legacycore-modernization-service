@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: legacycore-modernization-service
+  datasource:
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5445/legacycore}
+    username: ${POSTGRES_USER:legacycore}
+    password: ${POSTGRES_PASSWORD:legacycore}
+    hikari:
+      maximum-pool-size: 8
+  flyway:
+    enabled: true
+  jackson:
+    time-zone: UTC
+legacy:
+  datasource:
+    url: ${ORACLE_URL:jdbc:oracle:thin:@//localhost:1521/FREEPDB1}
+    username: ${ORACLE_USER:legacy}
+    password: ${ORACLE_PASSWORD:legacy}
+    maximum-pool-size: 4
+server:
+  port: ${PORT:8095}
+  shutdown: graceful
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true

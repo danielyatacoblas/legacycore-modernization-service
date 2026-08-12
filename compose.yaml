@@ -1,0 +1,38 @@
+services:
+  oracle:
+    image: gvenzl/oracle-free:23-slim-faststart
+    environment:
+      ORACLE_RANDOM_PASSWORD: "true"
+      APP_USER: legacy
+      APP_USER_PASSWORD: legacy
+      TZ: UTC
+    ports:
+      - "1521:1521"
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+      - ./infra/oracle:/container-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: legacycore
+      POSTGRES_USER: legacycore
+      POSTGRES_PASSWORD: legacycore
+      TZ: UTC
+    ports:
+      - "5445:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U legacycore -d legacycore"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+volumes:
+  oracle-data:
+  postgres-data:
