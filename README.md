@@ -14,7 +14,7 @@ reanudación y reconciliación verificable.</i></p>
   <img src="https://img.shields.io/badge/Oracle-origen-F80000?logo=oracle&logoColor=white" alt="Oracle">
   <img src="https://img.shields.io/badge/PostgreSQL-destino-4169E1?logo=postgresql&logoColor=white" alt="PostgreSQL">
   <img src="https://img.shields.io/badge/Linux-systemd-FCC624?logo=linux&logoColor=black" alt="Linux">
-  <img src="https://img.shields.io/badge/pruebas-3_aprobadas-2EAD33" alt="3 pruebas">
+  <img src="https://img.shields.io/badge/pruebas-4_aprobadas-2EAD33" alt="4 pruebas">
   <a href="LICENSE"><img src="https://img.shields.io/badge/licencia-MIT-blue" alt="MIT"></a>
 </p>
 
@@ -63,9 +63,15 @@ sintéticos; la UI indica que funciona en modo demostración.
 
 ## Capturas
 
-| Escritorio | Móvil |
-|---|---|
-| <img src="docs/screenshots/dashboard-desktop.png" alt="LegacyCore escritorio" width="620"> | <img src="docs/screenshots/dashboard-mobile.png" alt="LegacyCore móvil" width="230"> |
+| Pantalla | Claro | Oscuro |
+|---|---|---|
+| Migration center | ![Migration center claro](docs/screenshots/01-migration-center-light.png) | ![Migration center oscuro](docs/screenshots/01-migration-center-dark.png) |
+| Checkpoints | ![Checkpoints claro](docs/screenshots/02-checkpoints-light.png) | ![Checkpoints oscuro](docs/screenshots/02-checkpoints-dark.png) |
+| Reconciliación | ![Reconciliación clara](docs/screenshots/03-reconciliacion-light.png) | ![Reconciliación oscura](docs/screenshots/03-reconciliacion-dark.png) |
+| Ejecuciones | ![Ejecuciones claras](docs/screenshots/04-ejecuciones-light.png) | ![Ejecuciones oscuras](docs/screenshots/04-ejecuciones-dark.png) |
+| Auditoría | ![Auditoría clara](docs/screenshots/05-auditoria-light.png) | ![Auditoría oscura](docs/screenshots/05-auditoria-dark.png) |
+
+<p align="center"><img src="docs/screenshots/dashboard-mobile.png" alt="LegacyCore móvil" width="230"></p>
 
 ---
 
@@ -167,6 +173,9 @@ cd frontend && npm ci && npm test && npm run build
 ---
 
 ## GitFlow
+
+El gráfico reproduce el historial real hasta `v0.3.0`: integración, hotfix,
+evidencia documental, releases etiquetadas y merges de retorno.
 
 <p align="center">
   <img src="diagrams/rendered/gitflow.svg" alt="GitFlow LegacyCore" width="760">
